@@ -1,16 +1,7 @@
 import BLOG from '@/blog.config'
 import { getPostBlocks } from '@/lib/notion'
 import { getGlobalNotionData } from '@/lib/notion/getNotionData'
-
-
-
-
-
-/**
- * 加载默认主题
- */
-
-
+import Main from "./main"//引入一个页面
 /**
  * 首页布局
  * @param {*} props
@@ -20,7 +11,11 @@ const Index = props => {
   // 动态切换主题
   console.log(props)
   return (
-    <h1>Hello, {props.siteInfo.title}<br></br>单击F12查看notion page信息</h1>
+    <div>
+      <Main />
+      <h1 className='hb1'>Hello, {props.siteInfo.title}<br></br>单击F12查看notion page信息</h1>
+      <h1>abc</h1>
+    </div>
   );
 
 }
@@ -59,11 +54,11 @@ export async function getStaticProps() {
       }
       post.blockMap = await getPostBlocks(post.id, 'slug', BLOG.POST_PREVIEW_LINES)
     }
-    
+
   }
 
 
- 
+
 
   delete props.allPages
 

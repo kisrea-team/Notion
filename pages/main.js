@@ -1,5 +1,8 @@
-export default function name(params) {
-    return(
-        <div></div>
-    )    
+function Main() {
+    return (
+        <div>
+        </div>
+    )
+
 }
+export default Main;
