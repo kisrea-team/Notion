@@ -2,6 +2,7 @@ import BLOG from '@/blog.config'
 import { getPostBlocks } from '@/lib/notion'
 import { getGlobalNotionData } from '@/lib/notion/getNotionData'
 import Main from "./main"//引入一个页面
+import Image from 'next/image'
 /**
  * 首页布局
  * @param {*} props
@@ -14,7 +15,10 @@ const Index = props => {
     <div>
       <Main />
       <h1 className='hb1'>{props.siteInfo.title}</h1>
-      <h1>abc{props.latestPosts.summary}</h1>
+      <div className='h1-word-break'>
+        <h1>{props.siteInfo.description}</h1>
+      </div>
+      {/* <Image src={props.siteInfo.pageCover} /> */}
     </div>
   );
 

@@ -11,17 +11,10 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
-body {
-  text-align: center;
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
 .hb1{
   color: aqua;
+}
+.h1-word-break{
+  width: 50px;
+  word-break: break-all;
 }
