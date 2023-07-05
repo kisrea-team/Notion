@@ -13,8 +13,8 @@ const Index = props => {
   return (
     <div>
       <Main />
-      <h1 className='hb1'>Hello, {props.siteInfo.title}<br></br>单击F12查看notion page信息</h1>
-      <h1>abc</h1>
+      <h1 className='hb1'>{props.siteInfo.title}</h1>
+      <h1>abc{props.latestPosts.summary}</h1>
     </div>
   );
 
