@@ -4,7 +4,7 @@ import { getGlobalNotionData } from '@/lib/notion/getNotionData'
 
 
 
-const layout = 'LayoutIndex'
+// const layout = 'LayoutIndex'
 
 /**
  * 加载默认主题
