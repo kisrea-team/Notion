@@ -4,11 +4,6 @@ import { getGlobalNotionData } from '@/lib/notion/getNotionData'
 
 
 
-const layout = 'LayoutIndex'
-
-/**
- * 加载默认主题
- */
 
 
 /**
@@ -18,9 +13,9 @@ const layout = 'LayoutIndex'
  */
 const Index = props => {
   // 动态切换主题
- 
+  console.log(props)
   return (
-    <h1>Hello, {props.meta.title}</h1>
+    <h1>Hello, {props.siteInfo.title}<br></br>单击F12查看notion page信息</h1>
   );
 
 }
@@ -69,7 +64,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      meta,
+      //meta,
       ...props
     },
     revalidate: parseInt(BLOG.NEXT_REVALIDATE_SECOND)
