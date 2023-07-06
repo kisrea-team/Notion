@@ -11,10 +11,29 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-.hb1{
-  color: aqua;
+p{
+  width: 60px;
+  height: 20px;
+}
+.div-margin{
+  margin-left: 5%;
+  margin-right: 5%;
 }
 .h1-word-break{
-  width: 50px;
+  width: 25%;
   word-break: break-all;
+}
+.temp{
+  display: flex;
+  color: rgb(0, 136, 255);
+}
+.tags{
+  display: grid;
+  background-color:#f5e0e9;
+  color:#482d21;
+  border-radius: 5px;      
+  width: 60px;      
+  height: 20px;  
+  text-align: center;
+  align-content: center;
 }

@@ -14,11 +14,19 @@ const Index = props => {
   return (
     <div>
       <Main />
-      <h1 className='hb1'>{props.siteInfo.title}</h1>
-      <div className='h1-word-break'>
-        <h1>{props.siteInfo.description}</h1>
+      <div className='temp'>
+      <h2 className=''>{props.siteInfo.title}</h2>
+      <div className='tags'>
+        <p>代码</p>
+        {/* <p>{props.tagOptions.name}</p> 按理说应该是这样写的，但是不行 */}
       </div>
-      {/* <Image src={props.siteInfo.pageCover} /> */}
+      </div>
+      <div className='div-margin'>
+        <div className='h1-word-break'>
+          <h1>{props.siteInfo.description}</h1>
+        </div>
+        {/* <Image src={props.siteInfo.pageCover} /> */}
+      </div>
     </div>
   );
 
