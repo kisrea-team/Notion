@@ -16,9 +16,9 @@ import Image from 'next/image'
 const Index = props => {
   // console.log(props)
   console.log('ok')
-  var prop=JSON.stringify(props);
+  var prop = JSON.stringify(props);
   //console.log(prop)
-  
+
   const listItems = props.posts.map(product =>
     <li key={product.id}>
       {product.title}
@@ -34,36 +34,33 @@ const Index = props => {
     <div>
       <Main />
       <div className='temp'>
-<<<<<<< Updated upstream
-      <h2 className=''>{props.siteInfo.title}</h2>
-      <ul>{listItems}</ul>
-      <div className='tags'>
-        <p>代码</p>
-        {/* <p>{props.tagOptions.name}</p> 按理来说这么些也是不行的，这是数组，不是一个值 */}
-      </div>
-=======
+        <h2 className=''>{props.siteInfo.title}</h2>
+        <ul>{listItems}</ul>
+        <div className='tags'>
+          <p>代码</p>
+          {/* <p>{props.tagOptions.name}</p> 按理来说这么些也是不行的，这是数组，不是一个值 */}
+        </div>
         {/* <h2 className=''>{props.siteInfo.title}</h2> */}
         <div className='tags'>
           <p>tags</p>
           {/* <p>{props.tagOptions.name}</p> 按理说应该是这样写的，但是不行 */}
         </div>
->>>>>>> Stashed changes
-      </div>
+      </div >
       <div className='div-margin'>
         <div className='h1-word-break'>
           <h1>{props.siteInfo.description}</h1>
         </div>
         <img
-        className="avatar"
-        src={cover.imageUrl}
-        alt={'Photo of ' + cover.name}
-        style={{
-          width: cover.imageSize,
-          height: cover.imageSize
-        }}
-      />
+          className="avatar"
+          src={cover.imageUrl}
+          alt={'Photo of ' + cover.name}
+          style={{
+            width: cover.imageSize,
+            height: cover.imageSize
+          }}
+        />
       </div>
-    </div>
+    </div >
   );
 
 }
