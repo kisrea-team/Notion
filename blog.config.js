@@ -47,7 +47,7 @@ const BLOG = {
         icon: process.env.NEXT_PUBLIC_NOTION_PROPERTY_ICON || 'icon'
     },
 
-
+    IMG_URL_TYPE: process.env.NEXT_PUBLIC_IMG_TYPE || 'Notion',
     NOTION_HOST:'https://www.notion.so',
     // 开发相关
     NOTION_ACCESS_TOKEN: process.env.NOTION_ACCESS_TOKEN || '', // Useful if you prefer not to make your database public
