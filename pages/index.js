@@ -22,9 +22,9 @@ const Index = props => {
   };
   console.log(props)
   return (
-    <div className='flex'>
+    <div className=''>
       <Main />
-      <div className='temp'>
+      <div className='temp flex align-Center'>
         <h2 className=''>{props.siteInfo.title}</h2>
         {/* <ul>{listItems}</ul> */}
         <div className='tags'>
@@ -37,8 +37,8 @@ const Index = props => {
           {/* <p>{props.tagOptions.name}</p> 按理说应该是这样写的，但是不行 */}
         </div>
       </div >
-      <div className='div-margin'>
-        <div className='h1-word-break'>
+      <div className='div-margin flex align-Center'>
+        <div className='h1-word-break flex'>
           <div className='line'></div>
           <h1>{props.siteInfo.description}</h1>
         </div>

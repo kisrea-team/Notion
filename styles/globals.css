@@ -14,7 +14,7 @@
 }
 
 .flex {
-  /* display: flex; */
+  display: flex;
 }
 
 .header {
@@ -29,8 +29,7 @@ p {
 }
 
 .div-margin {
-  display: flex;
-  align-items: center;
+  margin-top: 15px;
   margin-left: 5%;
   margin-right: 5%;
 }
@@ -38,14 +37,12 @@ p {
 .h1-word-break {
   width: 25%;
   word-break: break-all;
-  display: flex;
   align-items: center;
 }
 
 .temp {
   width: 100%;
   height: 60px;
-  display: flex;
   color: rgb(0, 136, 255);
 }
 
@@ -75,4 +72,8 @@ p {
   margin-right: 10px;
   vertical-align: top;
   border-top: 35px solid black;
+}
+
+.align-Center {
+  align-items: center;
 }
