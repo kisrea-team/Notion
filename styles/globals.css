@@ -43,3 +43,9 @@ p{
   text-align: center;
   align-content: center;
 }
+.avatar{
+  display: block;
+  position: static;
+  width: 10%;
+  height: 60px;
+}

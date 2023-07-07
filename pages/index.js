@@ -50,14 +50,12 @@ const Index = props => {
         <div className='h1-word-break'>
           <h1>{props.siteInfo.description}</h1>
         </div>
-        <img
-          className="avatar"
+        <Image className="avatar"
+          // layout="fill"
           src={cover.imageUrl}
           alt={'Photo of ' + cover.name}
-          style={{
-            width: cover.imageSize,
-            height: cover.imageSize
-          }}
+        width={1000}
+        height={300}
         />
       </div>
     </div >
