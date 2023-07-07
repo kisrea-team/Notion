@@ -34,12 +34,20 @@ const Index = props => {
     <div>
       <Main />
       <div className='temp'>
+<<<<<<< Updated upstream
       <h2 className=''>{props.siteInfo.title}</h2>
       <ul>{listItems}</ul>
       <div className='tags'>
         <p>代码</p>
         {/* <p>{props.tagOptions.name}</p> 按理来说这么些也是不行的，这是数组，不是一个值 */}
       </div>
+=======
+        {/* <h2 className=''>{props.siteInfo.title}</h2> */}
+        <div className='tags'>
+          <p>tags</p>
+          {/* <p>{props.tagOptions.name}</p> 按理说应该是这样写的，但是不行 */}
+        </div>
+>>>>>>> Stashed changes
       </div>
       <div className='div-margin'>
         <div className='h1-word-break'>

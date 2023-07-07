@@ -1,10 +1,12 @@
-import props from "./index";
 function Main() {
+<<<<<<< Updated upstream
     const {  } = props;
     
+=======
+>>>>>>> Stashed changes
     return (
-        <div>
-            {/* <h1>{props.siteInfo.title}</h1> */}
+        <div className="header">
+            <h1>名称</h1>
         </div>
     )
 
