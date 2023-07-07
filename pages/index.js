@@ -8,24 +8,52 @@ import Image from 'next/image'
  * @param {*} props
  * @returns
  */
+
+
+
+
+
 const Index = props => {
-  // 动态切换主题
+  // console.log(props)
+  console.log('ok')
+  var prop=JSON.stringify(props);
+  //console.log(prop)
+  
+  const listItems = props.posts.map(product =>
+    <li key={product.id}>
+      {product.title}
+    </li>
+  );
+  const cover = {
+    name: '图像',
+    imageUrl: props.siteInfo.pageCover,
+    imageSize: 200,
+  };
   console.log(props)
   return (
     <div>
       <Main />
       <div className='temp'>
       <h2 className=''>{props.siteInfo.title}</h2>
+      <ul>{listItems}</ul>
       <div className='tags'>
         <p>代码</p>
-        {/* <p>{props.tagOptions.name}</p> 按理说应该是这样写的，但是不行 */}
+        {/* <p>{props.tagOptions.name}</p> 按理来说这么些也是不行的，这是数组，不是一个值 */}
       </div>
       </div>
       <div className='div-margin'>
         <div className='h1-word-break'>
           <h1>{props.siteInfo.description}</h1>
         </div>
-        {/* <Image src={props.siteInfo.pageCover} /> */}
+        <img
+        className="avatar"
+        src={cover.imageUrl}
+        alt={'Photo of ' + cover.name}
+        style={{
+          width: cover.imageSize,
+          height: cover.imageSize
+        }}
+      />
       </div>
     </div>
   );
@@ -43,20 +71,6 @@ export async function getStaticProps() {
   const { siteInfo } = props
   props.posts = props.allPages.filter(page => page.type === 'Post' && page.status === 'Published')
 
-  const meta = {
-    title: `${siteInfo?.title} | ${siteInfo?.description}`,
-    description: siteInfo?.description,
-    image: siteInfo?.pageCover,
-    slug: '',
-    type: 'website'
-  }
-  // 处理分页
-  if (BLOG.POST_LIST_STYLE === 'scroll') {
-    // 滚动列表默认给前端返回所有数据
-  } else if (BLOG.POST_LIST_STYLE === 'page') {
-    props.posts = props.posts?.slice(0, BLOG.POSTS_PER_PAGE)
-  }
-
   // 预览文章内容
   if (BLOG.POST_LIST_PREVIEW === 'true') {
     for (const i in props.posts) {
@@ -69,18 +83,13 @@ export async function getStaticProps() {
 
   }
 
-
-
-
-  delete props.allPages
-
   return {
     props: {
-      //meta,
       ...props
     },
     revalidate: parseInt(BLOG.NEXT_REVALIDATE_SECOND)
   }
+
 }
 
 export default Index
