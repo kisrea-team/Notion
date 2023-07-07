@@ -3,22 +3,13 @@ import { getPostBlocks } from '@/lib/notion'
 import { getGlobalNotionData } from '@/lib/notion/getNotionData'
 import Main from "./main"//引入一个页面
 import Image from 'next/image'
-/**
- * 首页布局
- * @param {*} props
- * @returns
- */
 
-
-
-
+// @param {*} props
+// @returns
 
 const Index = props => {
-  // console.log(props)
   console.log('ok')
   var prop = JSON.stringify(props);
-  //console.log(prop)
-
   const listItems = props.posts.map(product =>
     <li key={product.id}>
       {product.title}
@@ -27,15 +18,15 @@ const Index = props => {
   const cover = {
     name: '图像',
     imageUrl: props.siteInfo.pageCover,
-    imageSize: 200,
+    imageSize: 100,
   };
   console.log(props)
   return (
-    <div>
+    <div className='flex'>
       <Main />
       <div className='temp'>
         <h2 className=''>{props.siteInfo.title}</h2>
-        <ul>{listItems}</ul>
+        {/* <ul>{listItems}</ul> */}
         <div className='tags'>
           <p>代码</p>
           {/* <p>{props.tagOptions.name}</p> 按理来说这么些也是不行的，这是数组，不是一个值 */}
@@ -48,14 +39,15 @@ const Index = props => {
       </div >
       <div className='div-margin'>
         <div className='h1-word-break'>
+          <div className='line'></div>
           <h1>{props.siteInfo.description}</h1>
         </div>
         <Image className="avatar"
           // layout="fill"
           src={cover.imageUrl}
           alt={'Photo of ' + cover.name}
-        width={1000}
-        height={300}
+          width={1000}
+          height={300}
         />
       </div>
     </div >
