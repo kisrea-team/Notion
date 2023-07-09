@@ -3,13 +3,26 @@ import { getPostBlocks } from '@/lib/notion'
 import { getGlobalNotionData } from '@/lib/notion/getNotionData'
 import Main from "./main"//引入一个页面
 import Image from 'next/image'
+import Cookies from 'js-cookie'
+
+
+
 
 // @param {*} props
 // @returns
 
+
+function StringAs(string) {
+	return '"' + string.replace(/(\\|\"|\n|\r|\t)/g, "\\$1") + '"';
+}
 const Index = props => {
   console.log('ok')
   var prop = JSON.stringify(props);
+  var propp=StringAs(prop)
+  Cookies.set('test', prop); //设置一个json
+
+
+
   const listItems = props.posts.map(product =>
     <li key={product.id}>
       {product.title}
@@ -20,7 +33,7 @@ const Index = props => {
     imageUrl: props.siteInfo.pageCover,
     imageSize: 100,
   };
-  console.log(props)
+  console.log(propp)
   return (
     <div className=''>
       <Main />
