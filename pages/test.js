@@ -1,14 +1,27 @@
-import Cookies from 'js-cookie'
+import { getData } from '@/lib/notion/getPostBlocks';
 
+// @param {*} props
+// @returns
 
-function Test() {
-    var props=Cookies.get('test');
-    console.log(props)
-    return (
-
-        <div>
-        </div>
-    )
-
+const Test = data => {
+  console.log(data)
+  
 }
-export default Test;
+
+/**
+ * SSG 获取数据
+ * @returns
+ */
+export async function getStaticProps() {
+    const data = await getData()
+    if (!data) {
+        return {
+        notFound: true,
+        }
+    }
+    return {
+        props: { data }, // will be passed to the page component as props
+    }
+}
+
+export default Test
