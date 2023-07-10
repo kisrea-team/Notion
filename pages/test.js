@@ -7,7 +7,6 @@ const Test = data => {
   console.log(data)
   
 }
-
 /**
  * SSG 获取数据
  * @returns
