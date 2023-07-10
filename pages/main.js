@@ -1,10 +1,25 @@
-function Main() {
-    return (
+import { getData } from '@/lib/notion/getPostBlocks';
 
-        <div>
-            <h1>abc</h1>
-        </div>
-    )
+// @param {*} props
+// @returns
 
+const Test = data => {
+  console.log(data)
 }
-export default Main;
+/**
+ * SSG 获取数据
+ * @returns
+ */
+export async function getStaticProps() {
+    const data = await getData()
+    if (!data) {
+        return {
+        notFound: true,
+        }
+    }
+    return {
+        props: { data }, // will be passed to the page component as props
+    }
+}
+
+export default Test
