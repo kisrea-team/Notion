@@ -4,7 +4,11 @@ import { getData } from '@/lib/notion/getPostBlocks';
 // @returns
 
 const Test = data => {
-  console.log(data)
+    console.log(data)
+    return(
+        <div>
+        </div>
+    )
 }
 /**
  * SSG 获取数据
@@ -14,7 +18,7 @@ export async function getStaticProps() {
     const data = await getData()
     if (!data) {
         return {
-        notFound: true,
+            notFound: true,
         }
     }
     return {
