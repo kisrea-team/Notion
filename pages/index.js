@@ -37,25 +37,25 @@ const Index = props => {
           <div className='line'></div>
           <h1>{props.siteInfo.description} //右侧图片怎么为固定大小过大时裁剪</h1>
         </div>
+        <div style={{ position: 'relative', width: 500, height: 240 }}>
         <Image className="avatar"
           //layout="fill"
           src={cover.imageUrl}
           alt={'Photo of ' + cover.name}
-          width={1000}
-          height={300}
+          layout="fill"
         />
+        </div>
       </div>
-      <div className='flex'>
+      <div className='flex' style={{ position: 'relative', width: 500, height: 240 }}>
         <Image className='Notice-Cover'
           src={props.notice.pageCover}
           alt='Page cover'
-          width={100}
-          height={100}
+          layout="fill"
         />
+        </div>
         <div>
           <h2>{props.notice.summary}</h2>
           <p>这里显示详细内容，但我不会😢</p>
-        </div>
       </div>
     </div >
   );
