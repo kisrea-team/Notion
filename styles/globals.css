@@ -20,6 +20,9 @@ body {
     transform: scale(1) translateX(100);
   }
 } */
+::-webkit-scrollbar {
+  display: none;/*隐藏滚动条*/
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -77,12 +80,15 @@ body {
 }
 
 .avatar {
-  display: block;
+  /* display: block; */
   position: static;
-  width: 50%;
+  width: 80%;
   height: 50%;
   margin-left: 20%;
   overflow: hidden;
+  background-size: cover;
+  white-space: 'nowrap';
+  display: inline-block;
 }
 
 .avatar img {
@@ -103,7 +109,8 @@ body {
 .align-Center {
   align-items: center;
 }
-.Notice-Cover{
+
+.Notice-Cover {
   height: 40%;
   width: 40%;
 }
