@@ -5,6 +5,7 @@ import { setData } from '@/lib/notion/getPostBlocks'
 import Main from "./main"//引入一个页面
 import Image from 'next/image'
 import { document } from 'postcss'
+import { useEffect,useState } from 'react'
 //import anime from 'animejs/lib/anime.es.js';//动画库 https://animejs.com/documentation/#cssSelector
 // @param {*} props
 // @returns
@@ -25,6 +26,11 @@ const Index = props => {
     imageUrl: props.siteInfo.pageCover,
     imageSize: 100,
   };
+  const [imageSize,setImageSize ] = useState({width:0,height:0});
+  useEffect(() => {
+    const newImageSize = {width:400,height:500};
+    setImageSize(newImageSize);
+  },[]);
   //console.log(propp)
   return (
     <div className=''>
@@ -33,39 +39,40 @@ const Index = props => {
         <h1 className='title'>{props.siteInfo.title}</h1>
       </div >
       <div className='div-margin flex align-Center'>
-        <div className='h1-word-break flex'>
-          <div className='line'></div>
-          <h1>{props.siteInfo.description} //右侧图片怎么为固定大小过大时裁剪</h1>
+        <div className='h1-word-break'>
+          <div className='flex' style={{alignItems: 'center',marginLeft: '20%',marginRight: '10%'}}>
+            {/* <div className='line'></div> */}
+            <h1 className='TextSize'>{props.siteInfo.description}</h1>
+          </div>
         </div>
-        <div style={{width:'500px',
-        height:'500px',
-        border:'solid transparent',
-        position:'relative',
-        }}>
-          {/* <div style={{ position: 'relative' }}> */}
-            <Image className="avatar"
-              src={cover.imageUrl}
-              alt={'Photo of ' + cover.name}
-              width={1000}
-              height={1000}
-            />
-          {/* </div> */}
+        <div className="flex" style={{ width: '55%', height:'50%', overflow: 'hidden', justifyContent: 'flex-end' ,position:'relative'}}>
+          <Image className=""
+          style={{width:'100%',height:'30vw'}}
+            src={cover.imageUrl}
+            alt={'Photo of ' + cover.name}
+            width={imageSize.width}
+            height={imageSize.height}
+            // layout='fill'
+          />
         </div>
       </div>
       <div>
         <div className='flex' style={{ position: 'relative' }}>
-          <Image className='Notice-Cover'
-            src={props.notice.pageCover}
-            alt='Page cover'
-            // layout="fill"
-            width={100}
-            height={100}
-          />
+          <div className='Notice' style={{ width: '45%', height: '500px', overflow: 'hidden', }}>
+            <Image
+              src={props.notice.pageCover}
+              alt='介绍封面'
+              layout="responsive"
+              width={1000}
+              height={100}
+            />
+          </div>
+          <div>
+            <h2>{props.notice.summary}</h2>
+            <p>这里显示详细内容，但我不会😢</p>
+          </div>
         </div>
-        <div>
-          <h2>{props.notice.summary}</h2>
-          <p>这里显示详细内容，但我不会😢</p>
-        </div>
+
       </div>
     </div >
   );
