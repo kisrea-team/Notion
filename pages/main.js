@@ -7,6 +7,8 @@ const Test = data => {
     console.log(data)
     return(
         <div>
+            <h1>This is a test{props.siteInfo.title}</h1>
+
         </div>
     )
 }

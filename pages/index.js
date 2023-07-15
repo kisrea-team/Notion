@@ -5,7 +5,7 @@ import { setData } from '@/lib/notion/getPostBlocks'
 import Main from "./main"//引入一个页面
 import Image from 'next/image'
 import { document } from 'postcss'
-import { useEffect,useState } from 'react'
+import { useEffect, useState } from 'react'
 //import anime from 'animejs/lib/anime.es.js';//动画库 https://animejs.com/documentation/#cssSelector
 // @param {*} props
 // @returns
@@ -14,7 +14,7 @@ import { useEffect,useState } from 'react'
 
 const Index = props => {
   const anime = require('animejs');
-  console.log('ok')
+  // console.log('ok')
   const prop = JSON.stringify(props);
   const listItems = props.posts.map(product =>
     <li key={product.id}>
@@ -26,11 +26,11 @@ const Index = props => {
     imageUrl: props.siteInfo.pageCover,
     imageSize: 100,
   };
-  const [imageSize,setImageSize ] = useState({width:0,height:0});
+  const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
   useEffect(() => {
-    const newImageSize = {width:400,height:500};
+    const newImageSize = { width: 400, height: 500 };
     setImageSize(newImageSize);
-  },[]);
+  }, []);
   //console.log(propp)
   return (
     <div className=''>
@@ -40,19 +40,19 @@ const Index = props => {
       </div >
       <div className='div-margin flex align-Center'>
         <div className='h1-word-break'>
-          <div className='flex' style={{alignItems: 'center',marginLeft: '20%',marginRight: '10%'}}>
+          <div className='flex' style={{ alignItems: 'center', marginLeft: '20%', marginRight: '10%' }}>
             {/* <div className='line'></div> */}
             <h1 className='TextSize'>{props.siteInfo.description}</h1>
           </div>
         </div>
-        <div className="flex" style={{ width: '55%', height:'50%', overflow: 'hidden', justifyContent: 'flex-end' ,position:'relative'}}>
+        <div className="flex" style={{ width: '55%', height: '50%', overflow: 'hidden', justifyContent: 'flex-end', position: 'relative' }}>
           <Image className=""
-          style={{width:'100%',height:'30vw'}}
+            style={{ width: '100%', height: '30vw' }}
             src={cover.imageUrl}
             alt={'Photo of ' + cover.name}
             width={imageSize.width}
             height={imageSize.height}
-            // layout='fill'
+          // layout='fill'
           />
         </div>
       </div>
