@@ -7,6 +7,7 @@ import Image from "next/image";
 import { document } from "postcss";
 // import { useEffect, useState } from 'react'
 import React, { useEffect, useRef, useState } from "react";
+import styles from '/st';
 //import anime from 'animejs/lib/anime.es.js';//动画库 https://animejs.com/documentation/#cssSelector
 // @param {*} props
 // @returns

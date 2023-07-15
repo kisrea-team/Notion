@@ -7,6 +7,7 @@ import Image from "next/image";
 import { document } from "postcss";
 // import { useEffect, useState } from 'react'
 import React, { useEffect, useRef, useState } from "react";
+import styles from './index.module.css';
 //import anime from 'animejs/lib/anime.es.js';//动画库 https://animejs.com/documentation/#cssSelector
 // @param {*} props
 // @returns
@@ -40,7 +41,7 @@ const Index = (props) => {
     const characters = text.split(''); // 将文本拆分为单个字符
 console.log(characters)
     const wrappedContent = characters.map((char, index) => (
-      `<span key={${index}} className={styles['falling-letter']}>${char}</span>` // 使用数组的 map 方法生成每个字母的 <span> 元素
+      `<span key={${index}} class="styles[falling-letter]">${char}</span>` // 使用数组的 map 方法生成每个字母的 <span> 元素
     ));
     console.log(wrappedContent)
     h1Element.innerHTML = ''; // 清空原来的文本内容

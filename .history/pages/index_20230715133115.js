@@ -40,12 +40,11 @@ const Index = (props) => {
     const characters = text.split(''); // 将文本拆分为单个字符
 console.log(characters)
     const wrappedContent = characters.map((char, index) => (
-      `<span key={${index}} className={styles['falling-letter']}>${char}</span>` // 使用数组的 map 方法生成每个字母的 <span> 元素
+      `<span key={${index}}>{${char}'}</span>` // 使用数组的 map 方法生成每个字母的 <span> 元素
     ));
     console.log(wrappedContent)
     h1Element.innerHTML = ''; // 清空原来的文本内容
-    // h1Element.append(...wrappedContent); // 添加新的包裹字母的 <span> 元素
-    h1Element.innerHTML = wrappedContent.join('');
+    h1Element.append(...wrappedContent); // 添加新的包裹字母的 <span> 元素
 
   }, []);
   //console.log(propp)
