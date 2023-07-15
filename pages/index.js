@@ -23,6 +23,7 @@ const Index = (props) => {
     imageUrl: props.siteInfo.pageCover,
     imageSize: 100,
   };
+
   const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
   const h1Ref = useRef(null);
   useEffect(() => {
@@ -33,40 +34,47 @@ const Index = (props) => {
 
     //获取h1标签的内容
     const h1Element = h1Ref.current;
-    console.log(h1Element)
+    console.log(h1Element);
     const text = h1Element.textContent;
-    console.log(text)
+    console.log(text);
 
     const characters = text.split(''); // 将文本拆分为单个字符
-console.log(characters)
+    console.log(characters);
+
     const wrappedContent = characters.map((char, index) => (
       `<span key={${index}} className={styles['falling-letter']}>${char}</span>` // 使用数组的 map 方法生成每个字母的 <span> 元素
     ));
     console.log(wrappedContent)
+
     h1Element.innerHTML = ''; // 清空原来的文本内容
     // h1Element.append(...wrappedContent); // 添加新的包裹字母的 <span> 元素
     h1Element.innerHTML = wrappedContent.join('');
-
+    setTimeout(() => {
+      const letters = h1Element.querySelectorAll('.falling-letter');
+      for (let i = 0; i < letters.length; i++) {
+        letters[i].style.setProperty('--delay', `${i * 0.05}s`);
+      }
+    }, 0);
   }, []);
   //console.log(propp)
   return (
     <div className="">
       <Main />
       <div className="header flex align-Center">
-        <h1 className="title">{props.siteInfo.title}</h1>
+        <h1 className="title ">{props.siteInfo.title}</h1>
       </div>
       <div className="div-margin flex align-Center">
         <div className="h1-word-break">
           <div
             className="flex"
             style={{
-              alignItems: "center",
+              // alignItems: "center",
               marginLeft: "20%",
               marginRight: "10%",
             }}
           >
             {/* <div className='line'></div> */}
-            <h1 className="TextSize" ref={h1Ref}>
+            <h1 className="TextSize falling-letter" ref={h1Ref} style={{ color: 'pink', fallingLetter: 'position' }}>
               {props.siteInfo.description}
             </h1>
           </div>
@@ -88,7 +96,7 @@ console.log(characters)
             alt={"Photo of " + cover.name}
             width={imageSize.width}
             height={imageSize.height}
-            // layout='fill'
+          // layout='fill'
           />
         </div>
       </div>
