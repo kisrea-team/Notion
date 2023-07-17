@@ -49,8 +49,10 @@ const Index = (props) => {
     h1Element.innerHTML = ''; // 清空原来的文本内容
     // h1Element.append(...wrappedContent); // 添加新的包裹字母的 <span> 元素
     h1Element.innerHTML = wrappedContent.join('');
+    
     setTimeout(() => {
-      const letters = h1Element.querySelectorAll('.falling-letter');
+      const letters = h1Element.querySelectorAll('.falling-letter span');
+      console.log(letters.length)
       for (let i = 0; i < letters.length; i++) {
         letters[i].style.setProperty('--delay', `${i * 0.05}s`);
       }
