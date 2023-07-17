@@ -7,13 +7,37 @@ import Image from "next/image";
 import { document } from "postcss";
 // import { useEffect, useState } from 'react'
 import React, { useEffect, useRef, useState } from "react";
+import anime from "animejs"
+
 //import anime from 'animejs/lib/anime.es.js';//动画库 https://animejs.com/documentation/#cssSelector
 // @param {*} props
 // @returns
 
 const Index = (props) => {
-  const anime = require("animejs");
+  // const anime = require("animejs");
+  // anime({
+  //   targets: '.cover',
+  //   translateX: 250
+  // });
   // console.log('ok')
+
+
+  const animationRef = React.useRef(null);
+  React.useEffect(() => {
+    animationRef.current = anime({
+      targets: ".el",
+      translateX: 250,
+      delay: function(el, i) {
+        return i * 100;
+      },
+      loop: true,
+      direction: "alternate",
+      easing: "easeInOutSine"
+    });
+  }, []);
+
+
+
   const prop = JSON.stringify(props);
   const listItems = props.posts.map((product) => (
     <li key={product.id}>{product.title}</li>
@@ -23,11 +47,16 @@ const Index = (props) => {
     imageUrl: props.siteInfo.pageCover,
     imageSize: 100,
   };
-
+  
   const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
   const h1Ref = useRef(null);
   useEffect(() => {
     // 挂载时执行的逻辑
+
+    
+
+
+
     const newImageSize = { width: 400, height: 500 };
     setImageSize(newImageSize);
 
@@ -49,7 +78,7 @@ const Index = (props) => {
     h1Element.innerHTML = ''; // 清空原来的文本内容
     // h1Element.append(...wrappedContent); // 添加新的包裹字母的 <span> 元素
     h1Element.innerHTML = wrappedContent.join('');
-    
+   
     setTimeout(() => {
       const letters = h1Element.querySelectorAll('.falling-letter span');
       console.log(letters.length)
@@ -59,6 +88,8 @@ const Index = (props) => {
     }, 0);
   }, []);
   //console.log(propp)
+
+ 
   return (
     <div className="">
       <Main />
@@ -114,6 +145,7 @@ const Index = (props) => {
               layout="responsive"
               width={1000}
               height={100}
+              className='el'
             />
           </div>
           <div>
