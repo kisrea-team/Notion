@@ -52,7 +52,7 @@ const Index = (props) => {
     <div>
       <div className="flex h-14 bg-red-200 flex-wrap content-center md:box-content">
         <h1 className="2xl:text-2xl sm:text-sm  text-justify ml-10">{props.siteInfo.title}'Blog</h1>
-        <p className="text-sm">最新文章更新于{props.notice.createdTime}</p>
+        <p className="text-sm">最新文章更新于{props.posts[0].createdTime}</p>
       </div>
       <section className="w-full px-20 py-16 overflow-hidden grid grid-cols-1">
         <div className="flex flex-col content-center items-center">
