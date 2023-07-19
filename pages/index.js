@@ -67,7 +67,7 @@ const Index = (props) => {
             layout="cover"
           />
         </div>
-        <p>网站所有者</p>
+        <p>网站所有者{props.notice.Person[0].first_name} {props.notice.Person[0].last_name}</p>
 
       </section>
     </div>
