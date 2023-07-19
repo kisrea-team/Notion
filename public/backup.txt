@@ -1,0 +1,105 @@
+  // const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
+  // const h1Ref = useRef(null);
+  // useEffect(() => {
+  //   // 挂载时执行的逻辑
+  //   // const newImageSize = { width: 400, height: 500 };
+  //   // setImageSize(newImageSize);
+
+
+  //   //获取h1标签的内容
+  //   const h1Element = h1Ref.current;
+  //   console.log(h1Element);
+  //   const text = h1Element.textContent;
+  //   console.log(text);
+
+  //   const characters = text.split(''); // 将文本拆分为单个字符
+  //   console.log(characters);
+
+  //   const wrappedContent = characters.map((char, index) => (
+  //     `<span key={${index}} className={styles['falling-letter']}>${char}</span>` // 使用数组的 map 方法生成每个字母的 <span> 元素
+  //   ));
+  //   console.log(wrappedContent)
+
+  //   h1Element.innerHTML = ''; // 清空原来的文本内容
+  //   // h1Element.append(...wrappedContent); // 添加新的包裹字母的 <span> 元素
+  //   h1Element.innerHTML = wrappedContent.join('');
+
+  //   setTimeout(() => {
+  //     const letters = h1Element.querySelectorAll('.falling-letter span');
+  //     console.log(letters.length)
+  //     for (let i = 0; i < letters.length; i++) {
+  //       letters[i].style.setProperty('--delay', `${i * 0.05}s`);
+  //     }
+  //   }, 0);
+  // }, []);
+  //console.log(propp)
+
+
+
+      <div className="header flex align-Center">
+        <h1 className="title " style={{fontSize:'22px'}}>{props.siteInfo.title}</h1>
+      </div>
+      {/* er */}
+      <div className="">
+        <div className="h1-word-break box m-10">
+          <div
+            className="flex "
+            // style={{alignItems: "center",marginLeft: "20%",marginRight: "10%",}}
+          >
+            {/* <div className='line'></div> */}
+            <h1 className="TextSize falling-letter"
+              ref={h1Ref}
+              style={{
+                color: 'pink',
+                fallingLetter: 'position',
+                fontSize: 'calc(3 * var(--lem))',
+              }}>
+              {props.siteInfo.description}
+            </h1>
+          </div>
+        </div>
+        <div
+          className="flex box"
+          style={{
+            width: "55%",
+            height: "50%",
+            overflow: "hidden",
+            // justifyContent: "flex-end",
+            // position: "relative",
+          }}
+        >
+          <Image
+            className="absolute"
+            // style={{ width: "100%", height: "30vw" }}
+            src={cover.imageUrl}
+            alt={"Photo of " + cover.name}
+            width={1000}
+            height={1000}
+            priority
+          // layout='fill'
+          />
+        </div>
+      </div>
+
+      <div>
+        <div className="flex" style={{ position: "relative" }}>
+          <div
+            className="Notice absolute"
+            style={{ width: "45%", height: "5%", overflow: "hidden" }}
+          >
+            <Image
+              src={props.notice.pageCover}
+              alt="介绍封面"
+              // layout="cover"
+              width={1000}
+              height={1000}
+              priority
+            />
+          </div>
+
+          <div>
+            <h2>{props.notice.summary}</h2>
+            <p>这里显示详细内容，但我不会😢</p>
+          </div>
+        </div>
+      </div>

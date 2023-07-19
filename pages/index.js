@@ -4,10 +4,13 @@ import { getGlobalNotionData } from "@/lib/notion/getNotionData";
 import { setData } from "@/lib/notion/getPostBlocks";
 import Main from "./main"; //引入一个页面
 import Image from "next/image";
-import { document } from "postcss";
+import { Inter } from 'next/font/google'
+const inter = Inter({ subsets: ['latin'] })
+// import { document } from "postcss";
 // import { useEffect, useState } from 'react'
 import React, { useEffect, useRef, useState } from "react";
 import anime from "animejs"
+// import Test from "./main";
 
 //import anime from 'animejs/lib/anime.es.js';//动画库 https://animejs.com/documentation/#cssSelector
 // @param {*} props
@@ -22,22 +25,17 @@ const Index = (props) => {
   // console.log('ok')
 
 
-  const animationRef = React.useRef(null);
-  React.useEffect(() => {
-    animationRef.current = anime({
-      targets: ".el",
-      translateX: 250,
-      delay: function(el, i) {
-        return i * 100;
-      },
-      loop: true,
-      direction: "alternate",
-      easing: "easeInOutSine"
-    });
-  }, []);
+  // const animationRef = React.useRef(null);
+  // React.useEffect(() => {
+  //   animationRef.current = anime({
+  //     targets: '.one1',
+  //     translateY: -250,
+  //     duration: 3000
+  //   });
+  // }, []);
 
 
-
+  console.log(props)
   const prop = JSON.stringify(props);
   const listItems = props.posts.map((product) => (
     <li key={product.id}>{product.title}</li>
@@ -47,116 +45,37 @@ const Index = (props) => {
     imageUrl: props.siteInfo.pageCover,
     imageSize: 100,
   };
-  
-  const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
-  const h1Ref = useRef(null);
-  useEffect(() => {
-    // 挂载时执行的逻辑
-
-    
 
 
-
-    const newImageSize = { width: 400, height: 500 };
-    setImageSize(newImageSize);
-
-
-    //获取h1标签的内容
-    const h1Element = h1Ref.current;
-    console.log(h1Element);
-    const text = h1Element.textContent;
-    console.log(text);
-
-    const characters = text.split(''); // 将文本拆分为单个字符
-    console.log(characters);
-
-    const wrappedContent = characters.map((char, index) => (
-      `<span key={${index}} className={styles['falling-letter']}>${char}</span>` // 使用数组的 map 方法生成每个字母的 <span> 元素
-    ));
-    console.log(wrappedContent)
-
-    h1Element.innerHTML = ''; // 清空原来的文本内容
-    // h1Element.append(...wrappedContent); // 添加新的包裹字母的 <span> 元素
-    h1Element.innerHTML = wrappedContent.join('');
-   
-    setTimeout(() => {
-      const letters = h1Element.querySelectorAll('.falling-letter span');
-      console.log(letters.length)
-      for (let i = 0; i < letters.length; i++) {
-        letters[i].style.setProperty('--delay', `${i * 0.05}s`);
-      }
-    }, 0);
-  }, []);
-  //console.log(propp)
-
- 
+  // ------------------------------------------------------------------------//
   return (
-    <div className="">
-      <Main />
-      <div className="header flex align-Center">
-        <h1 className="title ">{props.siteInfo.title}</h1>
+    <div>
+      <div className="flex h-14 bg-red-200 flex-wrap content-center md:box-content">
+        <h1 className="2xl:text-2xl sm:text-sm  text-justify ml-10">{props.siteInfo.title}'Blog</h1>
+        <p className="text-sm">最新文章更新于{props.notice.createdTime}</p>
       </div>
-      <div className="div-margin flex align-Center">
-        <div className="h1-word-break">
-          <div
-            className="flex"
-            style={{
-              // alignItems: "center",
-              marginLeft: "20%",
-              marginRight: "10%",
-            }}
-          >
-            {/* <div className='line'></div> */}
-            <h1 className="TextSize falling-letter" ref={h1Ref} style={{ color: 'pink', fallingLetter: 'position' }}>
-              {props.siteInfo.description}
-            </h1>
-          </div>
-        </div>
-        <div
-          className="flex"
-          style={{
-            width: "55%",
-            height: "50%",
-            overflow: "hidden",
-            justifyContent: "flex-end",
-            position: "relative",
-          }}
-        >
+      <section className="w-full px-20 py-16 overflow-hidden grid grid-cols-1">
+        <div className="flex flex-col content-center items-center">
+
+          <h1 className=" w-1/2 text_vw overflow-hidden text-clip ">{props.siteInfo.description}</h1>
           <Image
-            className=""
-            style={{ width: "100%", height: "30vw" }}
-            src={cover.imageUrl}
-            alt={"Photo of " + cover.name}
-            width={imageSize.width}
-            height={imageSize.height}
-          // layout='fill'
+            className="w-full h-64 overflow-hidden"
+            src={props.siteInfo.pageCover}
+            alt="PageCover"
+            width={500}
+            height={100}
+            layout="cover"
           />
         </div>
-      </div>
-      <div>
-        <div className="flex" style={{ position: "relative" }}>
-          <div
-            className="Notice"
-            style={{ width: "45%", height: "500px", overflow: "hidden" }}
-          >
-            <Image
-              src={props.notice.pageCover}
-              alt="介绍封面"
-              layout="responsive"
-              width={1000}
-              height={100}
-              className='el'
-            />
-          </div>
-          <div>
-            <h2>{props.notice.summary}</h2>
-            <p>这里显示详细内容，但我不会😢</p>
-          </div>
-        </div>
-      </div>
+        <p>网站所有者</p>
+
+      </section>
     </div>
   );
 };
+// -------------------------------------------------------------------------//
+
+
 /**
  * SSG 获取数据
  * @returns

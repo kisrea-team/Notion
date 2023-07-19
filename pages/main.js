@@ -7,7 +7,6 @@ const Test = data => {
     console.log(data)
     return(
         <div>
-
         </div>
     )
 }

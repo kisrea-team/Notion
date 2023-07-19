@@ -1,8 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  /* display: flex; */
 
 }
 
@@ -10,16 +12,6 @@ body {
   margin: 0;
   padding: 0;
 }
-
-/* @keyframes identifier {
-  from {
-    transform: scale(0.1) translateX(0);
-  }
-
-  to {
-    transform: scale(1) translateX(100);
-  }
-} */
 ::-webkit-scrollbar {
   display: none;
   /*隐藏滚动条*/
@@ -32,114 +24,6 @@ body {
     --background-end-rgb: 0, 0, 0;
   }
 }
-
-.flex {
-  display: flex;
-}
-
-.TextSize {
-  font-size: 2vw;
-}
-
-.header {
-  width: 100%;
-  height: 65px;
-  color: rgb(255, 255, 255);
-  background-color: #c3d7df;
-}
-
-.title {
-  margin-left: 20px;
-}
-
-/* p {
-  width: 60px;
-  height: 20px;
-} */
-
-.div-margin {
-  /* margin-top: 80px;
-  margin-bottom: 80px;
-  margin-left: 5%;
-  margin-right: 5%; */
-  justify-content: flex-end;
-}
-
-.h1-word-break {
-  width: 45%;
-  height: 50%;
-  word-break: break-all;
-  align-items: center;
-  /* animation: identifier 2s ease 1s; */
-}
-
-
-
-.tags {
-  display: grid;
-  background-color: #f5e0e9;
-  color: #482d21;
-  border-radius: 5px;
-  width: 60px;
-  height: 20px;
-  text-align: center;
-  align-content: center;
-}
-
-.avatar {
-  /* display: block; */
-  /* position: static; */
-  width: 80%;
-  height: 50%;
-  /* margin-left: 20%; */
-  /* overflow: hidden; */
-  /* background-size: cover;
-  white-space: 'nowrap';
-  display: inline-block; */
-}
-
-.avatar img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
-.line {
-  width: 7px;
-  height: 35px;
-  line-height: 20px;
-  margin-right: 10px;
-  vertical-align: top;
-  border-top: 35px solid black;
-}
-
-.align-Center {
-  align-items: center;
-}
-
-.Notice {
-  margin-right: 5%;
-}
-
-span{animation: letter 1s cubic-bezier(0.75, -0.04, 0.49, 1.38) forwards var(--delay);}
-
-.falling-letter  {
-  animation: letter 1s cubic-bezier(0.75, -0.04, 0.49, 1.38) forwards var(--delay);
-  transform: skewX(-10deg);
-  /* 设置倾斜效果 */
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
-  /* 设置阴影效果 */
-  /* opacity: 0; */
-}
-
-@keyframes letter {
-  from {
-    opacity: 0;
-    transform: skewX(-10deg) translateY(200%);
-  }
-
-  to {
-    opacity: 1;
-    transform: skewX(-10deg) translateY(0);
-  }
+.text_vw{
+  font-size: 2.5vw;
 }
