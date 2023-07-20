@@ -4,7 +4,8 @@ import { getData } from '@/lib/notion/getPostBlocks';
 // @returns
 
 const Test = data => {
-  console.log(data)
+    const props=data.data
+    console.log(props)
   
 }
 /**
