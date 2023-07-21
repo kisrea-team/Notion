@@ -54,20 +54,27 @@ const Index = (props) => {
         <h1 className="2xl:text-2xl sm:text-sm  text-justify ml-10">{props.siteInfo.title}'Blog</h1>
         <p className="text-sm">最新文章更新于{props.posts[0].createdTime}</p>
       </div>
-      <section className="w-full px-20 py-16 overflow-hidden grid grid-cols-1">
-        <div className="flex flex-col content-center items-center">
-
-          <h1 className=" w-1/2 text_vw overflow-hidden text-clip ">{props.siteInfo.description}</h1>
+      <section className="w-full px-20 py-16 overflow-hidden grid grid-cols-1 grid-rows-2 gap-y-4">
+        <div className="grid grid-cols-2 content-center">
+          <h1 className=" w-1/2 text_vw_25 overflow-hidden text-clip ">{props.siteInfo.description}</h1>
+          <p className="flex content-end flex-wrap text_vw_20 justify-self-end font-semibold">@{props.notice.Person[0].name} </p>
+        </div>
+        {/* <Image src="public/blobanimation.svg" alt="abc" width={500}
+            height={100}
+        layout="cover" /> */}
+        <div className="grid grid-cols-2 gap-x-4 overflow-hidden content-center items-center h-48">
+          <div><p>bbbbb</p></div>
           <Image
-            className="w-full h-64 overflow-hidden"
+            className=""
             src={props.siteInfo.pageCover}
             alt="PageCover"
             width={500}
             height={100}
             layout="cover"
+            objectFit="contain"
           />
         </div>
-         <p>网站所有者{props.notice.Person[0].name} </p>
+
 
       </section>
     </div>
