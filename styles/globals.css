@@ -24,6 +24,9 @@ body {
     --background-end-rgb: 0, 0, 0;
   }
 }
-.text_vw{
+.text_vw_25{
   font-size: 2.5vw;
+}
+.text_vw_20{
+  font-size: 2vw;
 }
