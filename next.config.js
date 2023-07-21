@@ -3,6 +3,21 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 
 module.exports = withBundleAnalyzer({
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        dns: false,
+        fs: false,
+        path: false,
+        net: false,
+        tls: false,
+        child_process: false,
+        http2: false,
+      }
+    }
+
+    return config
+  },
   images: {
     // 图片压缩
     formats: ['image/avif', 'image/webp'],
@@ -56,15 +71,15 @@ module.exports = withBundleAnalyzer({
       }
     ]
   },
-  webpack: (config, { dev, isServer }) => {
-    // Replace React with Preact only in client production build
-    // if (!dev && !isServer) {
-    //   Object.assign(config.resolve.alias, {
-    //     react: 'preact/compat',
-    //     'react-dom/test-utils': 'preact/test-utils',
-    //     'react-dom': 'preact/compat'
-    //   })
-    // }
-    return config
-  }
+  // webpack: (config, { dev, isServer }) => {
+  //   // Replace React with Preact only in client production build
+  //   // if (!dev && !isServer) {
+  //   //   Object.assign(config.resolve.alias, {
+  //   //     react: 'preact/compat',
+  //   //     'react-dom/test-utils': 'preact/test-utils',
+  //   //     'react-dom': 'preact/compat'
+  //   //   })
+  //   // }
+  //   return config
+ // }
 })

@@ -20,8 +20,16 @@ const BLOG = {
 
 
 
-
-
+    POST_DISABLE_GALLERY_CLICK: process.env.NEXT_PUBLIC_POST_DISABLE_GALLERY_CLICK || false, // 画册视图禁止点击，方便在友链页面的画册插入链接
+    CODE_MAC_BAR: process.env.NEXT_PUBLIC_CODE_MAC_BAR || false, // 代码左上角显示mac的红黄绿图标
+    PRISM_JS_AUTO_LOADER:
+    'https://npm.elemecdn.com/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js',
+    PRISM_JS_PATH: 'https://npm.elemecdn.com/prismjs@1.29.0/components/',
+    PRISM_THEME_PATH:
+        'https://npm.elemecdn.com/prism-themes/themes/prism-a11y-dark.min.css', // 代码样式主题 更多参考 https://github.com/PrismJS/prism-themes
+    CODE_MAC_BAR: process.env.NEXT_PUBLIC_CODE_MAC_BAR || true, // 代码左上角显示mac的红黄绿图标
+    CODE_LINE_NUMBERS: process.env.NEXT_PUBLIC_CODE_LINE_NUMBERS || 'false', // 是否显示行号
+    CODE_COLLAPSE: process.env.NEXT_PUBLIC_CODE_COLLAPSE || 'false', // 是否折叠代码框
     // 自定义配置notion数据库字段名
     NOTION_PROPERTY_NAME: {
         password: process.env.NEXT_PUBLIC_NOTION_PROPERTY_PASSWORD || 'password',
