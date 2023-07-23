@@ -10,7 +10,6 @@ import { getPageTableOfContents } from '@/lib/notion/getPageTableOfContents'
 import NotionPage from '@/components/NotionPage'
 
 
-
 const GetStaticPaths = props => {
   const { post,slug,siteInfo } = props.props
   

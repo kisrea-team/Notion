@@ -17,24 +17,6 @@ import anime from "animejs"
 // @returns
 
 const Index = (props) => {
-  // const anime = require("animejs");
-  // anime({
-  //   targets: '.cover',
-  //   translateX: 250
-  // });
-  // console.log('ok')
-
-
-  // const animationRef = React.useRef(null);
-  // React.useEffect(() => {
-  //   animationRef.current = anime({
-  //     targets: '.one1',
-  //     translateY: -250,
-  //     duration: 3000
-  //   });
-  // }, []);
-
-
   console.log(props)
   const prop = JSON.stringify(props);
   const listItems = props.posts.map((product) => (
@@ -49,34 +31,53 @@ const Index = (props) => {
 
   // ------------------------------------------------------------------------//
   return (
-    <div>
-      <div className="flex h-14 bg-red-200 flex-wrap content-center md:box-content">
-        <h1 className="2xl:text-2xl sm:text-sm  text-justify ml-10">{props.siteInfo.title}'Blog</h1>
+    <div className="">
+      <div className="flex h-16 bg-red-200 flex-wrap content-center md:box-content">
+        <h1 className="2xl:text-xl sm:text-sm font-semibold text-justify ml-10">{props.siteInfo.title}</h1>
+      </div>
+      <div className="flex flex-wrap content-center justify-center w-full bg-white h-10 rounded-lg border-b border-gray-200">
         <p className="text-sm">最新文章更新于{props.posts[0].createdTime}</p>
       </div>
-      <section className="w-full px-20 py-16 overflow-hidden grid grid-cols-1 grid-rows-2 gap-y-4">
-        <div className="grid grid-cols-2 content-center">
-          <h1 className=" w-1/2 text_vw_25 overflow-hidden text-clip ">{props.siteInfo.description}</h1>
-          <p className="flex content-end flex-wrap text_vw_20 justify-self-end font-semibold">@{props.notice.Person[0].name} </p>
-        </div>
-        {/* <Image src="public/blobanimation.svg" alt="abc" width={500}
-            height={100}
-        layout="cover" /> */}
-        <div className="grid grid-cols-2 gap-x-4 overflow-hidden content-center items-center h-48">
-          <div><p>bbbbb</p></div>
-          <Image
-            className=""
-            src={props.siteInfo.pageCover}
-            alt="PageCover"
-            width={500}
-            height={100}
-            layout="cover"
-            objectFit="contain"
-          />
-        </div>
+      <div className="px-20 pb-16">
+        <section className=" w-full overflow-hidden grid grid-cols-1 grid-rows-2">
+          <div className="grid w-1/3 content-center">
+            <h1 className="text_vw_30 overflow-hidden text-clip font-medium ">{props.siteInfo.description}</h1>
+            <p className="flex justify-end flex-wrap pt-6 text_vw_15 text-left font-semibold">@{props.notice.Person[0].name} </p>
+          </div>
+          <div className="grid grid-cols-2 justify-items-end  content-center items-center h-full">
+            <div>
+            </div>
+            <div className="pt--1">
+              <Image
+                className="width-auto"
+                src={props.siteInfo.pageCover}
+                alt="PageCover"
+                width={9999}
+                height={9999}
+                layout="cover"
+                objectFit="contain"
+              />
+            </div>
+          </div>
+        </section>
+        <section className="grid grid-cols-2 gap-8">
+          <div className="w-11/12 h-1/2">
+            <Image
+              src={props.notice.pageCover}
+              alt="noticePageCover"
+              width={9999}
+              height={9999}
+              layout="cover"
+            />
+          </div>
+          <div className="pt-12 w-3/4">
+            <h1 className="text-5xl font-extrabold">介绍</h1>
+            <p className="pt-6 pb-10 indent-8 text-xl"><b>这里写的是介绍里的文字 介绍里的文字 介绍里的文字 介绍里的文字 介绍里的文字 介绍里的文字介绍里的文字</b></p>
+            <p className="text-end">2023/07/20</p>
 
-
-      </section>
+          </div>
+        </section>
+      </div>
     </div>
   );
 };
