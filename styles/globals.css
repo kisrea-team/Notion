@@ -5,7 +5,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-
+  --x3: 13px;
 }
 
 body {
@@ -22,6 +22,7 @@ body {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    --x3:12px;
   }
 }
 .text_vw_30{
@@ -30,9 +31,12 @@ body {
 .text_vw_15{
   font-size: 1.5vw;
 }
-.h-160{
-  height: 160%;
-}
 .pt--1{
   margin-top: -15%;
+}
+.bg-blue{
+  background-color:#d3e5ef;
+}
+.p-3calc{
+  padding: 3px var(--x3);
 }
