@@ -84,7 +84,7 @@ const GetStaticPaths = props => {
           <NotionPage post={post} />
 
         </div>
-       
+         <p>网站所有者 </p>
 
       </section>
     </div>
