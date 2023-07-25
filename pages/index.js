@@ -82,51 +82,51 @@ const Index = (props) => {
           <section>
             <div className="grid grid-cols-3 bg-slate-50 font-normal">
               <div className="flex flex-col flex-wrap justify-around items-center border-inherit border">
-                <h1 className="text-5xl p-14 leading-snug font-normal">{props.posts[0].title}</h1>
+                <h1 className="text-5xl p-14 leading-snug font-normal">{props.stars[0].title}</h1>
                 <Image
                     className="w-4/5 rounded-xl drop-shadow-2xl hover:shadow-2xl"
-                    src={props.posts[0].pageCover}
+                    src={props.stars[0].pageCover}
                     alt="postImage"
                     width={9999}
                     height={9999}
                     layout="cover"
                 />
                 <p className="m-2.5">
-                  <span className="text-l p-3calc rounded-md bg-blue leading-7 m-1">{props.tagOptions[0].name}</span>
-                  <span className="text-l p-3calc rounded-md bg-pink-100 leading-7 m-1">{props.tagOptions[1].name}</span>
-                  <span className="text-l p-3calc rounded-md bg-pink-100 leading-7 m-1">{props.tagOptions[2].name}</span>
+                  <span className="text-l p-3calc rounded-md bg-blue leading-7 m-1">{props.stars[0].tags[0]}</span>
+                  <span className="text-l p-3calc rounded-md bg-pink-100 leading-7 m-1">{props.stars[0].tags[1]}</span>
+                  <span className="text-l p-3calc rounded-md bg-pink-100 leading-7 m-1">{props.stars[0].tags[2]}</span>
                 </p>
               </div>
               <div className="flex flex-col flex-wrap justify-around items-center border-inherit border">
-                <h1 className="text-5xl p-14 leading-snug">{props.posts[1].title}</h1>
+                <h1 className="text-5xl p-14 leading-snug">{props.stars[1].title}</h1>
                 <Image
                     className="w-4/5 rounded-xl drop-shadow-2xl hover:shadow-2xl"
-                    src={props.posts[1].pageCover}
+                    src={props.stars[1].pageCover}
                     alt="postImage"
                     width={9999}
                     height={9999}
                     layout="cover"
                 />
                 <p className="m-2.5">
-                  <span className="text-l p-3calc rounded-md bg-blue leading-7 m-1">{props.tagOptions[0].name}</span>
-                  <span className="text-l p-3calc rounded-md bg-pink-100 leading-7 m-1">{props.tagOptions[1].name}</span>
-                  <span className="text-l p-3calc rounded-md bg-pink-100 leading-7 m-1">{props.tagOptions[2].name}.</span>
+                  <span className="text-l p-3calc rounded-md bg-blue leading-7 m-1">{props.stars[1].tags[0]}</span>
+                  <span className="text-l p-3calc rounded-md bg-pink-100 leading-7 m-1">{props.stars[1].tags[1]}</span>
+                  <span className="text-l p-3calc rounded-md bg-pink-100 leading-7 m-1">{props.stars[1].tags[2]}</span>
                 </p>
               </div>
               <div className="flex flex-col flex-wrap justify-around items-center border-inherit border">
-                <h1 className="text-5xl p-14 leading-snug">{props.posts[2].title}</h1>
+                <h1 className="text-5xl p-14 leading-snug">{props.stars[2].title}</h1>
                 <Image
                     className="w-4/5 rounded-xl drop-shadow-2xl hover:shadow-2xl"
-                    src={props.posts[2].pageCover}
+                    src={props.stars[2].pageCover}
                     alt="postImage"
                     width={9999}
                     height={9999}
                     layout="cover"
                 />
                 <p className="m-2.5">
-                  <span className="text-l p-3calc rounded-md bg-blue leading-7 m-1">{props.tagOptions[0].name}</span>
-                  <span className="text-l p-3calc rounded-md bg-pink-100 leading-7 m-1">{props.tagOptions[1].name}</span>
-                  <span className="text-l p-3calc rounded-md bg-pink-100 leading-7 m-1">{props.tagOptions[2].name}</span>
+                  <span className="text-l p-3calc rounded-md bg-blue leading-7 m-1">{props.stars[2].tags[0]}</span>
+                  <span className="text-l p-3calc rounded-md bg-pink-100 leading-7 m-1">{props.stars[2].tags[1]}</span>
+                  <span className="text-l p-3calc rounded-md bg-pink-100 leading-7 m-1">{props.stars[2].tags[2]}</span>
                 </p>
               </div>
             </div>
