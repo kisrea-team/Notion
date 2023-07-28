@@ -17,6 +17,7 @@ const BLOG = {
 
     PREVIEW_CATEGORY_COUNT: 16, // 首页最多展示的分类数量，0为不限制
     PREVIEW_TAG_COUNT: 16, // 首页最多展示的标签数量，0为不限制
+    MERMAID_CDN: process.env.NEXT_PUBLIC_MERMAID_CDN || 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.2.4/mermaid.min.js', // CDN
 
 
 
