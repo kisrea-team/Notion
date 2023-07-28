@@ -37,6 +37,6 @@ body {
 .bg-blue{
   background-color:#d3e5ef;
 }
-.p-3calc{
-  padding: 3px var(--x3);
+.p-2calc{
+  padding: 2px var(--x3);
 }
