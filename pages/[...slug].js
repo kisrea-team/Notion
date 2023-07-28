@@ -11,9 +11,14 @@ import NotionPage from '@/components/NotionPage'
 
 
 const GetStaticPaths = props => {
+  const router = useRouter()
+  if(!props.props.post)
+  {
+    return '404'
+  }
   const { post,slug,siteInfo } = props.props
   
-  const router = useRouter()
+ 
   
   // 文章锁🔐
   const [lock, setLock] = useState(post?.password && post?.password !== '')
@@ -73,9 +78,8 @@ const GetStaticPaths = props => {
   // 根据页面路径加载不同Layout文件
   return (
     <div>
-      <div className="flex h-14 bg-red-200 flex-wrap content-center md:box-content">
-        
-        <p className="text-sm">文章详情</p>
+      <div className="flex h-16 bg-red-200 flex-wrap content-center md:box-content">
+          <h1 className="2xl:text-xl sm:text-sm font-semibold text-justify ml-10">{props.meta.title}</h1>
       </div>
       <section className="w-full px-20 py-16 overflow-hidden grid grid-cols-1">
         <div className="flex flex-col content-center items-center">
@@ -84,7 +88,7 @@ const GetStaticPaths = props => {
           <NotionPage post={post} />
 
         </div>
-         <p>网站所有者 </p>
+       
 
       </section>
     </div>
@@ -100,6 +104,7 @@ const GetStaticPaths = props => {
     // console.log("paths", paths)
     const from = 'slug-paths'
     const { allPages } = await getGlobalNotionData({ from })
+    
      const paths=allPages?.map(row => ({ params: { slug: [row.id] } }))
    //console.log(allPages)
    // console.log(allPages)
@@ -130,21 +135,21 @@ const GetStaticPaths = props => {
         fullSlug += '.html'
       }
     }
-    const from = `slug-props-${fullSlug}`
+    const from = `index`
     const props = await getGlobalNotionData({ from })
     // 在列表内查找文章
     props.post = props?.allPages?.find((p) => {
       return p.slug === fullSlug || p.id === idToUuid(fullSlug)
     })
 
-    // 处理非列表内文章的内信息
-    if (!props?.post) {
-      const pageId = slug.slice(-1)[0]
-      if (pageId.length >= 32) {
-        const post = await getNotion(pageId)
-        props.post = post
-      }
-    }
+    // // 处理非列表内文章的内信息
+    // if (!props?.post) {
+    //   const pageId = slug.slice(-1)[0]
+    //   if (pageId.length >= 32) {
+    //     const post = await getNotion(pageId)
+    //     props.post = post
+    //   }
+    // }
 
     // 无法获取文章
     if (!props?.post) {
