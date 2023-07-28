@@ -9,9 +9,9 @@ import {Inter} from 'next/font/google'
 const inter = Inter({subsets: ['latin']})
 // import { document } from "postcss";
 // import { useEffect, useState } from 'react'
-import React, {useEffect, useRef, useState} from "react";
-import anime from "animejs"
-import colors from "tailwindcss/colors";
+import React from "react";
+// import anime from "animejs"
+// import colors from "tailwindcss/colors";
 // import Test from "./main";
 
 //import anime from 'animejs/lib/anime.es.js';//动画库 https://animejs.com/documentation/#cssSelector
@@ -22,6 +22,7 @@ const Index = (props) => {
   const listItems = props.stars.map(product =>
 
     <div>
+      <a href={product.id}>
         <div className="flex flex-col flex-wrap justify-around items-center border-inherit border">
           <h1 className="text-5xl p-14 leading-snug font-normal">{product.title}</h1>
                     <Image
@@ -38,6 +39,7 @@ const Index = (props) => {
                       <span className="text-l p-3calc rounded-md bg-pink-100 leading-7 m-1">{product.tags[2]}</span>
                     </p>
         </div>
+      </a>
     </div>
       );
   console.log(props)

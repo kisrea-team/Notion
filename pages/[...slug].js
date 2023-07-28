@@ -11,6 +11,7 @@ import NotionPage from '@/components/NotionPage'
 
 
 const GetStaticPaths = props => {
+  console.log(props)
   const router = useRouter()
   if(!props.props.post)
   {
@@ -139,7 +140,7 @@ const GetStaticPaths = props => {
     const props = await getGlobalNotionData({ from })
     // 在列表内查找文章
     props.post = props?.allPages?.find((p) => {
-      return p.slug === fullSlug || p.id === idToUuid(fullSlug)
+      return p.id === fullSlug || p.id === idToUuid(fullSlug)
     })
 
     // // 处理非列表内文章的内信息
