@@ -66,7 +66,7 @@ body {
 .m_photo_text {
   display: flex;
   height: 100vh;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
 }
 
 .m_photo_text div {

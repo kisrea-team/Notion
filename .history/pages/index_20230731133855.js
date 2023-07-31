@@ -66,9 +66,7 @@ const Index = (props) => {
   // };
   // ------------------------------------------------------------------------//
 
-  /// *页面布局 m_开头为自定义样式
-  //  具体样式代码见globals.css的主页图文排版布局
-
+  //页面布局
   return (
     <div>
       {/* 页眉 */}
@@ -92,7 +90,7 @@ const Index = (props) => {
               @{props.notice.Person[0].name}{" "}
             </p>
           </div>
-          <div className="m_photo">
+          <div className="m_text">
             <Image
               className=""
               src={props.siteInfo.pageCover}
@@ -104,9 +102,9 @@ const Index = (props) => {
             />
           </div>
         </section>
-        {/* 介绍…… */}
-        <section className="m_photo_text">
-          <div className="m_photo">
+        {/*  */}
+        <section className="grid grid-cols-2 gap-8">
+          <div className="w-11/12 h-1/2">
             <Image
               src={props.notice.pageCover}
               alt="noticePageCover"
@@ -115,7 +113,7 @@ const Index = (props) => {
               layout="cover"
             />
           </div>
-          <div className="m_text">
+          <div className="pt-12 w-3/4">
             <h1 className="md:text-5xl sm:text-4xl  font-extrabold">介绍</h1>
             <p className="pt-6 pb-10 indent-8 text-xl">
               <b>

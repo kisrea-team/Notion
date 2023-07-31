@@ -69,15 +69,14 @@ body {
   border: 1px solid #000;
 }
 
-.m_photo_text div {
+.m_photo_text .m_text {
   flex: 1;
 }
 
-.m_photo_text .m_text {
+.m_photo_text .m_text:first-child {
   line-height: 100%;
-  width: 100px;
 }
 
-.m_photo_text .m_photo {
+.m_photo_text .m_text:last-child {
   padding-top: 10rem;
 }

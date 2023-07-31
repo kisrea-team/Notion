@@ -66,9 +66,7 @@ const Index = (props) => {
   // };
   // ------------------------------------------------------------------------//
 
-  /// *页面布局 m_开头为自定义样式
-  //  具体样式代码见globals.css的主页图文排版布局
-
+  //页面布局
   return (
     <div>
       {/* 页眉 */}
@@ -115,7 +113,7 @@ const Index = (props) => {
               layout="cover"
             />
           </div>
-          <div className="m_text">
+          <div className="pt-12 w-3/4">
             <h1 className="md:text-5xl sm:text-4xl  font-extrabold">介绍</h1>
             <p className="pt-6 pb-10 indent-8 text-xl">
               <b>

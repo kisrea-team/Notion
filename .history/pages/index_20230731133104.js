@@ -66,9 +66,7 @@ const Index = (props) => {
   // };
   // ------------------------------------------------------------------------//
 
-  /// *页面布局 m_开头为自定义样式
-  //  具体样式代码见globals.css的主页图文排版布局
-
+  //页面布局
   return (
     <div>
       {/* 页眉 */}
@@ -82,19 +80,18 @@ const Index = (props) => {
       </div>
       <div className="container m-auto">
         {/* 图文布局 */}
-        {/* 种一棵树是十年前…… */}
         <section className="m_photo_text">
           <div className="m_text">
             <h1 className=" text_vw_30 sm:text-5xl overflow-hidden text-clip font-medium bg-red-800">
               {props.siteInfo.description}
             </h1>
-            <p className="pt-6 text_vw_15 font-semibold text-right">
+            <p className="flex justify-end flex-wrap pt-6 text_vw_15 text-left font-semibold">
               @{props.notice.Person[0].name}{" "}
             </p>
           </div>
-          <div className="m_photo">
+          <div className="m_text">
             <Image
-              className=""
+              className="justify-items-end content-end h-full"
               src={props.siteInfo.pageCover}
               alt="PageCover"
               width={9999}
@@ -104,9 +101,9 @@ const Index = (props) => {
             />
           </div>
         </section>
-        {/* 介绍…… */}
-        <section className="m_photo_text">
-          <div className="m_photo">
+
+        <section className="grid grid-cols-2 gap-8">
+          <div className="w-11/12 h-1/2">
             <Image
               src={props.notice.pageCover}
               alt="noticePageCover"
@@ -115,7 +112,7 @@ const Index = (props) => {
               layout="cover"
             />
           </div>
-          <div className="m_text">
+          <div className="pt-12 w-3/4">
             <h1 className="md:text-5xl sm:text-4xl  font-extrabold">介绍</h1>
             <p className="pt-6 pb-10 indent-8 text-xl">
               <b>

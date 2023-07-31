@@ -66,14 +66,14 @@ body {
 .m_photo_text {
   display: flex;
   height: 100vh;
-  border: 1px solid #000;
-}
-
-.m_photo_text div {
-  flex: 1;
+  /* border: 1px solid #000; */
 }
 
 .m_photo_text .m_text {
+  flex: 1;
+}
+
+.m_photo_text .m_text:first-child {
   line-height: 100%;
   width: 100px;
 }
