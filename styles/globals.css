@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -12,6 +13,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 ::-webkit-scrollbar {
   display: none;
   /*隐藏滚动条*/
@@ -22,30 +24,54 @@ body {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
-    --x3:12px;
+    --x3: 12px;
   }
 }
-.text_vw_30{
+
+/* @keyframes test {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 110%;
+  }
+} */
+
+.test:hover {
+  /* animation: test 1s; */
+  transform: scale(1.05);
+  transition: cubic-bezier(0.3, 0.03, 1, 0.64);
+}
+
+.text_vw_30 {
   font-size: 3vw;
 }
-.text_vw_15{
+
+.text_vw_15 {
   font-size: 1.5vw;
 }
-.pt--1{
+
+.pt--1 {
   margin-top: -15%;
 }
-.bg-blue{
-  background-color:#d3e5ef;
+
+.bg-blue {
+  background-color: #d3e5ef;
 }
-.p-2calc{
+
+.p-2calc {
   padding: 2px var(--x3);
 }
-.row-3{
+
+.row-3 {
   grid-row: 3;
 }
-.row-2{
+
+.row-2 {
   grid-row: span 2;
 }
-.grid-row-121{
+
+.grid-row-121 {
   grid-template-rows: 1fr 2fr 1fr;
 }

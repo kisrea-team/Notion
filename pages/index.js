@@ -24,12 +24,12 @@ const Index = (props) => {
     // eslint-disable-next-line react/jsx-key
     <div>
       <a href={product.id}>
-        <div className="flex flex-col flex-wrap items-center border-inherit border">
+        <div className="flex flex-col flex-wrap items-center border-inherit border test">
           <h1 className="flex items-center flex-col text-5xl p-14 leading-snug font-normal">{product.title}
             <span className=" text-lg text-slate-800">{product.date.start_date}</span>
           </h1>
           <Image
-            className="w-4/5 rounded-xl drop-shadow-2xl hover:shadow-2xl"
+            className="w-4/5 rounded-xl drop-shadow-2xl hover:shadow-2xl test"
             src={product.pageCover}
             alt="postImage"
             width={9999}
@@ -71,8 +71,8 @@ const Index = (props) => {
       <div className="container m-auto">
 
         <section className=" w-full overflow-hidden grid grid-cols-2 grid-row-121 relative">
-          <div className="grid ">
-            <h1 className=" text_vw_30 sm:text-5xl overflow-hidden text-clip font-medium bg-red-800">{props.siteInfo.description}</h1>
+          <div className="pr-80 content-center ">
+            <h1 className=" text_vw_30 sm:text-5xl overflow-hidden text-clip font-medium">{props.siteInfo.description}</h1>
             <p className="flex justify-end flex-wrap pt-6 text_vw_15 text-left font-semibold">@{props.notice.Person[0].name} </p>
           </div>
           <div className="row-2">
