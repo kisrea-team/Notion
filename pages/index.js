@@ -39,8 +39,9 @@ const Index = (props) => {
           <div className="mt-8 mx-14">
             {product.tagItems.map((item, index) => (
               <span key={index}
-                style={{ backgroundColor: item.color }}
-                className=" colored-texttext-l p-2calc rounded-md leading-8 m-1">
+                
+                className={`colored-texttext-l p-2calc rounded-md leading-8 m-1 notion-${item.color}_background` }>
+                
                 {item.name}
               </span>))}
           </div>
