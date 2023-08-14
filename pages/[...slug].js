@@ -53,15 +53,15 @@ const GetStaticPaths = props => {
     }
 
     // 文章加密
-    if (post?.password && post?.password !== '') {
-      setLock(true)
-    } else {
-      setLock(false)
-      if (!lock && post?.blockMap?.block) {
-        post.content = Object.keys(post.blockMap.block).filter(key => post.blockMap.block[key]?.value?.parent_id === post.id)
-        post.toc = getPageTableOfContents(post, post.blockMap)
-      }
-    }
+    // if (post?.password && post?.password !== '') {
+    //   setLock(true)
+    // } else {
+    //   setLock(false)
+    //   if (!lock && post?.blockMap?.block) {
+    //     post.content = Object.keys(post.blockMap.block).filter(key => post.blockMap.block[key]?.value?.parent_id === post.id)
+    //     post.toc = getPageTableOfContents(post, post.blockMap)
+    //   }
+    // }
   }, [post])
 
   const meta = {
@@ -73,18 +73,18 @@ const GetStaticPaths = props => {
     category: post?.category?.[0],
     tags: post?.tags
   }
-  props = { ...props, lock, meta, slug, setLock, validPassword }
+  props = { ...props, meta, slug, post, validPassword }
   console.log(props)
   // 根据页面路径加载不同Layout文件
   return (
     <div>
       <div className="flex h-16 bg-red-200 flex-wrap content-center md:box-content">
-        <h1 className="2xl:text-xl sm:text-sm font-semibold text-justify ml-10">{props.meta.title}</h1>
+        <h1 className="2xl:text-xl sm:text-sm font-semibold text-justify ml-10">{props.meta.title},</h1>
+
       </div>
       <section className="w-full px-20 py-16 overflow-hidden grid grid-cols-1">
-        <div className="flex flex-col content-center items-center">
-
-          <h1 className=" w-1/2 text_vw overflow-hidden text-clip ">abc</h1>
+        <div className="flex flex-col ">
+          <p>{props.post.title}</p>
           <NotionPage post={post} />
 
         </div>

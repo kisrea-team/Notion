@@ -24,7 +24,7 @@ const Index = (props) => {
     // eslint-disable-next-line react/jsx-key
     <div>
       <a href={product.id}>
-        <div className="flex flex-col flex-wrap items-center border-inherit border test">
+        <div className="flex flex-col flex-wrap items-center border-inherit border">
           <h1 className="flex items-center flex-col text-5xl p-14 leading-snug font-normal">{product.title}
             <span className=" text-lg text-slate-800">{product.date.start_date}</span>
           </h1>

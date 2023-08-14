@@ -7,7 +7,7 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --x3: 13px;
-  
+
   --notion-red: rgb(224, 62, 62);
   --notion-pink: rgb(173, 26, 114);
   --notion-blue: rgb(11, 110, 153);
@@ -25,30 +25,39 @@
 .notion-red_background {
   background-color: var(--notion-red);
 }
+
 .notion-pink_background {
   background-color: var(--notion-pink);
 }
+
 .notion-blue_background {
   background-color: var(--notion-blue);
 }
+
 .notion-purple_background {
   background-color: var(--notion-purple);
 }
+
 .notion-teal_background {
   background-color: var(--notion-teal);
 }
+
 .notion-yellow_background {
   background-color: var(--notion-yellow);
 }
+
 .notion-orange_background {
   background-color: var(--notion-orange);
 }
+
 .notion-brown_background {
   background-color: var(--notion-brown);
 }
+
 .notion-gray_background {
   background-color: var(--notion-gray);
 }
+
 .notion-green_background {
   background-color: var(--notion-green);
 }
@@ -123,8 +132,8 @@ body {
 
 .test:hover {
   /* animation: test 1s; */
-  transform: scale(1.05);
-  transition: cubic-bezier(0.3, 0.03, 1, 0.64);
+  transform: scale(1.005);
+  transition: 150ms cubic-bezier(0.3, 0.03, 1, 0.64);
 }
 
 .text_vw_30 {
@@ -158,4 +167,3 @@ body {
 .grid-row-121 {
   grid-template-rows: 1fr 2fr 1fr;
 }
-
