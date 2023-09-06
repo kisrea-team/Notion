@@ -6,8 +6,6 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --x3: 13px;
-
   --notion-red: rgb(224, 62, 62);
   --notion-pink: rgb(173, 26, 114);
   --notion-blue: rgb(11, 110, 153);
@@ -17,10 +15,8 @@
   --notion-orange: rgb(217, 115, 13);
   --notion-brown: rgb(100, 71, 58);
   --notion-gray: rgb(155, 154, 151);
+  --x3: 13px;
 }
-
-
-
 
 .notion-red_background {
   background-color: var(--notion-red);
@@ -62,9 +58,6 @@
   background-color: var(--notion-green);
 }
 
-
-
-
 body {
   margin: 0;
   padding: 0;
@@ -92,7 +85,7 @@ body {
 
 @media (min-width: 768px) {
   .font-size1 {
-    font-size: 0.8rem;
+    font-size: 3.54vh;
   }
 }
 
@@ -113,23 +106,6 @@ body {
     font-size: 1.5rem;
   }
 }
-
-
-
-
-
-
-
-/* @keyframes test {
-  from {
-    width: 100%;
-  }
-
-  to {
-    width: 110%;
-  }
-} */
-
 .test:hover {
   /* animation: test 1s; */
   transform: scale(1.005);
@@ -166,4 +142,28 @@ body {
 
 .grid-row-121 {
   grid-template-rows: 1fr 2fr 1fr;
+}
+
+.image-container {
+  height: 100%;
+  /* 设置您想要的固定高度 */
+  width: 100%;
+  /* 图像宽度自适应父容器 */
+  overflow: hidden;
+  /* 防止图像溢出 */
+}
+
+.w-350 {
+  width: 350px;
+}
+
+.h-200 {
+  height: 200px;
+}
+
+.a100vh {
+  height: 100vh;
+}
+.blur-1{
+  filter: blur(1px);
 }

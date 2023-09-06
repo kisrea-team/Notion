@@ -79,12 +79,12 @@ const GetStaticPaths = props => {
   return (
     <div>
       <div className="flex h-16 bg-red-200 flex-wrap content-center md:box-content">
-        <h1 className="2xl:text-xl sm:text-sm font-semibold text-justify ml-10">{props.meta.title},</h1>
-
+        <h1 className="2xl:text-xl sm:text-sm font-semibold text-justify ml-10">{props.post.title}</h1>
+        <h1 className="ml-10">{props.post.summary}</h1>
       </div>
       <section className="w-full px-20 py-16 overflow-hidden grid grid-cols-1">
         <div className="flex flex-col ">
-          <p>{props.post.title}</p>
+          {/* <p>{props.post.title}</p> */}
           <NotionPage post={post} />
 
         </div>
