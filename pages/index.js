@@ -67,7 +67,7 @@ const Index = (props) => {
       </div>
       <div
         className="flex flex-wrap content-center justify-center w-full bg-white h-10 rounded-lg border-b border-gray-200">
-        <p className="text-sm">最新文章更新于{props.posts[0].createdTime}</p>
+        <p className="text-sm">最新文章更新于{props.posts[0].lastEditedTime}天前</p>
       </div>
       <div className="container m-auto">
 
