@@ -82,11 +82,18 @@ body {
       font-size: 1.4rem;
    }
 
+   .gard-width {
+      width: 350px;
+   }
 }
 
 @media (min-width: 640px) {
    .font-size1 {
       font-size: 0.75rem;
+   }
+
+   .gard-width {
+      width: 360px;
    }
 }
 
@@ -94,11 +101,19 @@ body {
    .font-size1 {
       font-size: 0.875rem;
    }
+
+   .gard-width {
+      width: 400px;
+   }
 }
 
 @media (min-width: 1024px) {
    .font-size1 {
       font-size: 1rem;
+   }
+
+   .gard-width {
+      width: 440px;
    }
 }
 
@@ -106,12 +121,24 @@ body {
    .font-size1 {
       font-size: 1.25rem;
    }
+
+   .gard-width {
+      width: 480px;
+   }
 }
 
 @media (min-width: 1536px) {
    .font-size1 {
       font-size: 1.875rem;
    }
+
+   .gard-width {
+      width: 520px;
+      display: flex;
+   }
+   /* .gard-img{
+      width: gard-wdith;
+   } */
 }
 
 .test:hover {
@@ -175,4 +202,10 @@ body {
 
 .blur-1 {
    filter: blur(1px);
+}
+.card-img{
+   width:60%
+}
+.card-text{
+   width: 35%;
 }
