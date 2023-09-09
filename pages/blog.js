@@ -11,7 +11,7 @@ import { useState } from 'react';
 // @returns
 import { Button, Card, CardMedia, IconButton, CardContent, Typography, Avatar } from '@mui/material';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
-import { productionBrowserSourceMaps } from '@/next.config';
+// import { productionBrowserSourceMaps } from '@/next.config';
 const style = {
    img: {
       overflow: 'clip',
@@ -19,7 +19,7 @@ const style = {
       transform: 'Scale(105%)'
    },
    item: {
-      fontSize: '4vh',
+      fontSize: '2vh',
       marginRight: '5vh',
    }
 }
