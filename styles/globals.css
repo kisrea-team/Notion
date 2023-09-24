@@ -82,8 +82,8 @@ body {
       font-size: 1.4rem;
    }
 
-   .gard-width {
-      width: 350px;
+   .card-width {
+      width: 550px;
    }
 }
 
@@ -92,8 +92,8 @@ body {
       font-size: 0.75rem;
    }
 
-   .gard-width {
-      width: 360px;
+   .card-width {
+      width: 560px;
    }
 }
 
@@ -102,7 +102,7 @@ body {
       font-size: 0.875rem;
    }
 
-   .gard-width {
+   .card-width {
       width: 400px;
    }
 }
@@ -112,8 +112,8 @@ body {
       font-size: 1rem;
    }
 
-   .gard-width {
-      width: 440px;
+   .card-width {
+      width: 640px;
    }
 }
 
@@ -122,8 +122,8 @@ body {
       font-size: 1.25rem;
    }
 
-   .gard-width {
-      width: 480px;
+   .card-width {
+      width: 680px;
    }
 }
 
@@ -132,12 +132,12 @@ body {
       font-size: 1.875rem;
    }
 
-   .gard-width {
-      width: 520px;
+   .card-width {
+      width: 720px;
       display: flex;
    }
-   /* .gard-img{
-      width: gard-wdith;
+   /* .card-img{
+      width: card-wdith;
    } */
 }
 
@@ -161,6 +161,9 @@ body {
 
 .bg-blue {
    background-color: #d3e5ef;
+}
+.bg-main{
+   background-color: #F3F6F9;
 }
 
 .p-2calc {
@@ -204,8 +207,14 @@ body {
    filter: blur(1px);
 }
 .card-img{
-   width:60%
+   width:48%
 }
 .card-text{
-   width: 35%;
+   width: 52%;
+}
+.card-height{
+   height: 200px;
+}
+.list{
+   padding-left: 20%;
 }
