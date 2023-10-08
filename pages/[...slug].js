@@ -4,15 +4,15 @@ import BLOG from "@/blog.config";
 import { idToUuid } from 'notion-utils'
 import { getPostBlocks } from '@/lib/notion'
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { isBrowser } from '@/lib/utils'
-import { getPageTableOfContents } from '@/lib/notion/getPageTableOfContents'
+// import { getPageTableOfContents } from '@/lib/notion/getPageTableOfContents'
 import NotionPage from '@/components/NotionPage'
 
 
 const GetStaticPaths = props => {
   console.log(props)
-  const router = useRouter()
+  const Router = useRouter()
   if (!props.props.post) {
     return '404'
   }
