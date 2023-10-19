@@ -7,6 +7,7 @@ const Test = data => {
     console.log(data)
     return(
         <div>
+         <h1>Hello World{props.posts[0].lastEditedTime}</h1>
         </div>
     )
 }

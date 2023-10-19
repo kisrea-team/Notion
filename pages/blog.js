@@ -6,17 +6,11 @@ import { getData } from '@/lib/notion/getPostBlocks';
 // import Image from 'next/image';
 import * as React from 'react';
 import Time from './demo/time';
-// import { useState } from 'react';
-// import { jinrishici } from 'jinrishici-promise-ts';
-// import { list } from 'postcss';
-// @param {*} props
-// @returns
-import { Button, Card, CardMedia, IconButton, CardContent, Typography, Avatar, Box,} from '@mui/material';
+import Page from './demo/page';
+// import Shici from './demo/shici';
+import { Card, CardMedia, IconButton, CardContent, Typography, Avatar, Box, } from '@mui/material';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
-// import { deepClone } from '@/lib/utils';
-import { deepOrange, deepPurple } from '@mui/material/colors';
-// import { Time } from 'pages/time';
-// import { productionBrowserSourceMaps } from '@/next.config';
+import { deepPurple } from '@mui/material/colors';
 import SearchIcon from '@mui/icons-material/Search';
 
 const style = {
@@ -34,11 +28,11 @@ const style = {
       color: 'black',
    },
    box: {
-      display: 'flex',
+      display: 'grid',
       alignItems: 'center',
       width: '275px',
       height: '35px',
-      backgroundColor: 'primary.dark',
+      backgroundColor: 'white',
       borderRadius: '15px',
    }
 }
@@ -100,8 +94,9 @@ const Test = data => {
             </div>
             <section>
                {/* 搜索 */}
-               <Box sx={style.box}>
-                  <SearchIcon color=''/>
+               <Box sx={style.box} className="grid-cols-2">
+                  <Typography>搜索...</Typography>
+                  <SearchIcon color='white' className=' items-end' />
                </Box>
                {/* 介绍 */}
                <Card sx={{ maxWidth: 275, maxHeight: 275, borderRadius: 3.75 }}>
@@ -109,13 +104,14 @@ const Test = data => {
                      <div><Avatar sx={{ bgcolor: deepPurple[100] }} alt={data.data.notice.Person[0].name}></Avatar>
                         <Typography>{data.data.notice.Person[0].name}</Typography>
                         <Time /></div>
-
+                     {/* <Shici/> */}
                      <Typography variant='h6' component='div' style={style.text}>
                         {data.data.siteInfo.description}
                      </Typography>
                   </CardContent>
                   <CardContent></CardContent>
                </Card>
+               <Page />
             </section>
          </div>
       </main>
