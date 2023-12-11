@@ -40,6 +40,7 @@ const style = {
 // jinrishici.load(shici => {
 //    console.log(shici);
 // });
+console.log(data)
 const Test = data => {
    const listItems = data.data.posts.map(product =>
       // eslint-disable-next-line react/jsx-key

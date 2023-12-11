@@ -19,6 +19,7 @@ const inter = Inter({ subsets: ['latin'] })
 // @returns
 
 const Index = (props) => {
+   console.log(props)
    const listItems = props.stars.map(product =>
 
       // eslint-disable-next-line react/jsx-key
@@ -49,7 +50,7 @@ const Index = (props) => {
          </a>
       </div>
    );
-   console.log(props)
+
 
    return (
       <div>
