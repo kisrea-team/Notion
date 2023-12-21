@@ -1,4 +1,4 @@
-## 该库的支持已经转移到[Notion-New](https://github.com/kisrea-team/Notion-New)，该库不再更新。
+### 该库的支持已经转移到[Notion-New](https://github.com/kisrea-team/Notion-New)，该库不再更新。
 ## Notion 的一个博客系统，基于NotionNext，我们立志做出一个更加符合“大众”的系统
 ### 基于：[React-Notion-X](https://github.com/NotionX/react-notion-x)
 ### 参考：[NotionNext](LICENSE/notionnext/LICENSE)
